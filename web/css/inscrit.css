@@ -1,0 +1,187 @@
+#focus{
+text-align: justify;
+padding: 15px;
+margin: 20px;
+
+
+}
+#title{
+	text-align:right-side;
+	color:gray;
+	font-size:15px;
+}
+[id="navigation"] li
+{
+float:left;
+display:inline;
+}.rating a {  
+   float: right;  
+   color: #aaa;  
+   text-decoration: none;  
+   font-size: 3em;  
+   transition: color .4s;  
+}  
+rating a:hover,  
+rating a:focus,  
+rating a:hover ~ a,  
+rating a:focus ~ a {  
+   color: orange;  
+   cursor: pointer;  
+} 
+rating label:hover ~ label,    
+rating label:focus ~ label,  
+rating .checked ~ label {    
+   color: orange;    
+}
+[id="navigation"] a:link,a:visited
+{
+display:inline;
+width:60px;
+font-weight:bold;
+color:lime;
+background-color:gray;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+
+ input[type="text"]{
+	width:255px;
+}
+input[type="email"]{
+	width:255px;
+}
+input[type="number"]{
+	width:255px;
+}
+
+
+textarea{
+	width:255px;
+        height: 80;
+}
+ input[type="password"]{
+	width:255px;
+}
+ label{
+	width:255px;
+}
+input[type="date"]{
+	width: 255px;
+     height: 50px;
+     color: blueviolet;
+     margin-left:55px;
+     margin-top: 40px;
+     margin-left:  255px;
+}
+input[type="file"]{
+     width: 255px;
+     height: 50px;
+     color: blueviolet;
+     margin-left:55px;
+     margin-top: 40px;
+     margin-left:  255px;
+}
+
+button{
+     width: 255px;
+     height: 50px;
+     color: blueviolet;
+     margin-left:55px;
+     margin-top: 40px;
+     margin-left:  255px;
+     
+     
+}
+input[type="submit"]{
+     width: 250px;
+     height: 50px;
+     color: blueviolet;
+     margin-left:55px;
+     margin-top: 40px;
+     margin-left:  255px;
+} 
+#pres{
+    
+    margin-left:  480px;
+    color: blueviolet;
+}
+#fos_user_registration_form_sexe
+{
+    width: 255px;
+    height: 30px;
+
+}
+#myapp_userbundle_user_datedenaissance{
+    
+     width: 255px;
+     height: 70px;
+     color: blueviolet;
+     margin-bottom:  20px;
+     margin-left:  255px;
+}
+#myapp_userbundle_evaluation_note{
+    
+   width:255px;
+   color: #d66;
+}
+
+
+#bordure_img{
+border-radius: 30px;
+box-shadow: 6px 6px 0px gray ;
+}
+
+#globale{
+position:relative;
+ float:left; 
+ width:1300px;
+ background-color:silver;
+
+margin-left:25px;
+margin-right:25px;
+margin-bottom:50px;
+margin-top:50px;
+padding-top:25px;
+padding-bottom:25px;
+box-shadow: 9px 9px 0px gray ;
+}
+#gauche {
+
+	width:55%;
+    
+	float: left;
+	
+	
+}
+
+#droite {
+	width: 40%;
+	
+	float: right;
+    margin-bottom : 20px;
+	margin-right : 15px;
+
+}
+
+#outputL {
+	
+    min-height:80%;
+	width:30%;
+	border-color:silver;
+	float: right;
+	/* padding-bottom:40px;
+    padding-top:25px; */
+	
+
+}
+
+#outputD {
+	
+    min-height:400px;
+	
+
+
+}

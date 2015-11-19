@@ -1,0 +1,150 @@
+{%extends "PrestataireDeServicesprestataireBundle::layout.html.twig"%}
+{% block container %}
+
+<!-- Bootstrap core CSS -->
+   
+
+    <!-- Add custom CSS here -->
+
+   
+
+      <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+
+            $(function() {
+
+
+                // if the function argument is given to overlay,
+                // it is assumed to be the onBeforeLoad event listener
+                $("a[rel]").overlay({
+                    mask: 'darkred',
+                    effect: 'apple',
+                    onBeforeLoad: function() {
+                        
+                        // grab wrapper element inside content
+                        var wrap = this.getOverlay().find(".contentWrap");
+
+                        // load the page specified in the trigger
+                        wrap.load(this.getTrigger().attr("href"));
+                    }
+
+                });
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+    <!-- /.navbar-collapse -->
+
+
+    <div class="container">
+
+        <div class="row">
+                         
+
+
+            <div class="apple_overlay" id="overlay">
+
+                <div class="contentWrap"></div>
+            </div>
+             <div class="col-md-3">
+                <p class="lead" style="background: rgba(255,255,255,0.9);border-radius: 5px;color: #31b0d5;text-align: center">Espace Membre</p>
+                <div class="list-group">
+                    <a rel="#overlay" href="{{ path('deal_new') }}" class="list-group-item">Ajouter Deal</a>
+                    <a href="" class="list-group-item">Profil</a>
+                    <a href="" class="list-group-item">Modifier Profil</a>
+                    <a href="{{path('deal_mesDeal',{ 'iduser': 1 })}}" class="list-group-item">Mes Deal</a>
+                </div>
+            </div>
+
+            <div class="col-md-9" style="background:rgba(255,255,255,0.9); ">
+
+                <div class="row carousel-holder" style="margin-top: 2%">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="http://mobiscrub.com/wp-content/uploads/htc-one-feature.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://www.vag-electronique.fr/wp-content/uploads/2013/07/Igo3d%C3%A9coup%C3%A9800_300.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://www.touchepasmamontre.com/wp-content/uploads/2012/05/swissmilitarybychrono.jpg" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                            {% for deal in entities %}
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img class="alloma" src="{{deal.image}}" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right " style="color: #d9534f">${{deal.prixpromotionnel}}</h4>
+                                <h5 class="pull-right " style="color: #B3A9A9 ; text-decoration:line-through " >${{deal.prixinitial}}</h5>
+                                <h4><a rel="#overlay" href="{{ path('deal_show', { 'id': deal.id }) }}" style="font-size: small">{{deal.libelle}}</a>
+                                </h4>
+                                <p>{{deal.descriptif}} </p>
+                            </div>
+                            <div class="ratings" style="color: #d9534f">
+                                <p class="pull-right" style="color: #d9534f">15 reviews</p>
+                                <p style="color: #d9534f">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                          {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+            
+        </div>
+    </div>
+
+ 
+
+{% endblock %}

@@ -1,0 +1,30 @@
+deal:
+    pattern:  /
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:index" }
+
+deal_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:show" }
+
+deal_new:
+    pattern:  /new
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:new" }
+
+deal_create:
+    pattern:  /create
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:create" }
+    requirements: { _method: post }
+
+deal_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:edit" }
+
+deal_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:update" }
+    requirements: { _method: post|put }
+
+deal_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PrestataireDeServicesprestataireBundle:Deal:delete" }
+    requirements: { _method: post|delete }

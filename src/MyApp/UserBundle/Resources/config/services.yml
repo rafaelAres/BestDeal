@@ -1,0 +1,26 @@
+parameters:
+#    user.example.class: MyApp\UserBundle\Example
+
+
+services:
+    
+    MyApp_User.registration.form:
+        
+        class: MyApp\UserBundle\Form\RegistrationFormTypePres
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: MyApp_user_registration_pres }
+            
+    MyApp_User.registration.form1:
+        
+        class: MyApp\UserBundle\Form\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: MyApp_user_registration }
+            
+    ccdn_user_security.component.authentication.handler.login_Success_handler:
+        
+        class:  MyApp\UserBundle\Componoent\LoginSuccessHandler
+        arguments:  [@router, @security.context]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

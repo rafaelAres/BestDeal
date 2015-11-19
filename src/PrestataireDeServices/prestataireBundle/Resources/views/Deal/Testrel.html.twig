@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+     <link href="{{ asset('css/overlay-apple.css')}}" rel="stylesheet"/>
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    <script>
+        $(function() {
+
+            // if the function argument is given to overlay,
+            // it is assumed to be the onBeforeLoad event listener
+            $("a[rel]").overlay({
+
+                mask: 'darkred',
+                effect: 'apple',
+
+                onBeforeLoad: function() {
+
+                    // grab wrapper element inside content
+                    var wrap = this.getOverlay().find(".contentWrap");
+
+                    // load the page specified in the trigger
+                    wrap.load(this.getTrigger().attr("href"));
+                }
+
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+
+<a href="{{path ('rel2')}}" rel="#overlay" style="text-decoration:none">
+
+    <button type="button" >Show external page in overlay</button>
+</a>
+<a rel="#overlay" href="{{ path('deal_new') }}" class="list-group-item">Ajouter Deal</a>
+
+<div class="apple_overlay" id="overlay">
+
+    <div class="contentWrap"></div>
+</div>
+
+</body>
+</html>

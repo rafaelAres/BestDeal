@@ -1,0 +1,101 @@
+{%extends "AdminAdminBundle::layout.html.twig"%}
+{% block pagewrapper %}
+        
+
+<div id="pagewrapper">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1 class="page-header">Notifications</h1>
+                </div>
+                  <div class="col-lg-2">
+                <img src="{{asset('img/logo.PNG')}}">   
+            </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    {%if prests | length !=0%}
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                           Notification Prestataire
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            
+                           <div class="alert alert-warning">
+                                Il ya {{prests | length}} Prestataire a valider .
+                            
+                            </div>
+                             <a href="prest_a_Valider" class="btn btn-warning btn-lg btn-block">Valider Prestataire</a>  
+                            
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                                {% else %}
+                                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           Notification Prestataire
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                             
+                            
+                                <div class="alert alert-success">
+                                Il ya aucun prestataire a valider .
+                                </div>
+                             
+                            
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                                {% endif %}
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                     {%if deals | length !=0%}
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                           Notification Deal
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            
+                           <div class="alert alert-warning">
+                                Il ya {{deals | length}} Deal a valider .
+                            
+                            </div>
+                             <a href="deal_a_Valider" class="btn btn-warning btn-lg btn-block">Valider Deal</a>  
+                            
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                                {% else %}
+                                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           Notification Deal
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                             
+                            
+                                <div class="alert alert-success">
+                                Il ya aucun Deal a valider .
+                                </div>
+                             
+                            
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                                {% endif %}
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+           
+            <!-- /.row -->
+        </div>
+
+    <!-- /#page-wrapper -->
+    {% endblock %}

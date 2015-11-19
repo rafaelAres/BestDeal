@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <script src="{{asset('js/jquery-1.10.2.js')}}"></script>
+         <script src="{{asset('js/jquery.tools.min.js')}}"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+     
+        <title>Best Deal</title>
+        
+         <link href="{{ asset('css/shop-homepage.css')}}" rel="stylesheet">
+    <link href="{{asset('css/overlay-apple.css')}}" type="text/css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+        <!-- Add custom CSS here -->
+        <link href="{{asset('css/bestdeal.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="brand">Best Deal</div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="border-bottom-color: #2ba9e1">Best Deal</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="home">Home</a>
+                        </li>
+                        <li><a href="recherche">Recherche Deal</a>
+                        </li>
+                        <li><a href="connexion">Mon Espace</a>
+                        </li>                    
+                         <li><a href="http://localhost/P/bestdeal/web/app_dev.php/login">Connexion</a>
+                        </li>
+                        <li><a href="contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        {% block container %} {% endblock %}
+        <footer>
+            <div class="footer">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Copyright &copy; Sticky Bit 3A9 2014</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript -->
+        
+        <script src="{{asset('js/bootstrap.js')}}"></script>
+              
+        <script>
+            // Activates the Carousel
+            $('.carousel').carousel({
+                interval: 5000
+            })
+        </script>
+    </body>
+</html>

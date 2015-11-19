@@ -1,0 +1,80 @@
+{%extends "AdminAdminBundle::layout.html.twig"%}
+{% block pagewrapper %}
+
+    <div id="pagewrapper">
+            <div class="row">
+                
+                <div class="col-lg-10">
+                    <h1 class="page-header">Recherche...</h1>
+                </div>
+                  <div class="col-lg-2">
+                <img src="{{asset('img/logo.PNG')}}">   
+            </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+                        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                           List 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                {% if recherches | length !=0%}
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Nom</th>
+                                        <th>Prenom</th>
+                                        
+                                        <th>Sexe</th>
+                                        <th>DateDeNaissance</th>
+                                        <th>Telephone</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                   
+                                    <tbody>
+                                        
+                                       {% for recherche in recherches %}
+                                          
+                                        <tr>
+                                         <td>{{recherche.nom}}</td>
+                                            <td>{{recherche.prenom}}</td>
+                                            <td>{{recherche.sexe}}</td>
+                                            <td>{{recherche.datedenaissance}}</td>
+                                            <td>{{recherche.telephone}}</td>
+                                        <td><a href="{{path('client_supprimer',{id:recherche.id})}}" class="btn btn-outline btn-danger btn-block">Supprimer ce client</a></td>
+
+                                        </tr>
+                                        
+                                  
+                                      {% endfor %}
+                                               </tbody>
+                                </table>
+                                     
+                                                                            
+                                
+                            </div>
+                                      
+                             {% else %}         
+                                   
+                                           <div class="alert alert-danger">
+                                Aucun resultat pour votre recherche. <a href=client class="alert-link">Rechercher</a>.   
+                             {% endif%}
+                                 
+                            </div>
+                        </div>
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').dataTable();
+    });
+    </script>
+
+    
+    
+    
+{% endblock %}
+    

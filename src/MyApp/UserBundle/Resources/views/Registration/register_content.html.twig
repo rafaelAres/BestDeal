@@ -1,0 +1,65 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<link href="{{asset('css/inscrit.css')}}" rel="stylesheet">
+            <div class="box">
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+     
+        {{ form_errors(form.email) }}
+        {{ form_label(form.email)}}
+        {{ form_widget(form.email)}}
+        </br>
+        
+        
+        {{ form_errors(form.username) }}
+        {{form_label(form.username)}}
+        {{ form_widget(form.username) }}
+         </br>
+        {{ form_errors(form.plainPassword.first) }}
+        {{form_label(form.plainPassword.first)}}
+        {{ form_widget(form.plainPassword.first) }}
+         </br>
+        {{ form_errors(form.plainPassword.second) }}
+        {{form_label(form.plainPassword.second)}}
+        {{ form_widget(form.plainPassword.second) }}
+       </br>
+        {{form_label(form.prenom)}}
+        {{ form_widget(form.prenom) }}
+        </br>
+        {{form_label(form.nom)}}
+        {{ form_widget(form.nom) }}
+          </br>
+        {{form_label(form.adresse)}}
+        {{ form_widget(form.adresse) }}
+           </br>
+        {{form_label(form.datedenaissance)}}
+        {{ form_widget(form.datedenaissance) }}
+          </br>
+        {{form_label(form.telephone)}}
+        {{ form_widget(form.telephone) }}
+        </br>
+        
+        {{ form_widget(form.societe, { 'attr' : { 'style':'display:none'} }) }}
+        {{ form_widget(form.descriptif, { 'attr' : { 'style':'display:none'} }) }}
+
+               {{ form_rest(form) }} 
+               </br>
+       
+       {# form_widget(form)#}
+
+
+      
+
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+</form>
+    <ul class="record_actions">
+           
+   <a id="pres" href="{{ path('fos_user_registration_registerPres') }}">Vous etes prestataire inscrivez vous ici
+                   
+    </a>
+           
+        </ul>
+            </div>
+  
+  

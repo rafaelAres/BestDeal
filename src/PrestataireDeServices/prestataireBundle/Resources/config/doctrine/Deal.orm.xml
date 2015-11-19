@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PrestataireDeServices\prestataireBundle\Entity\Deal" table="deal">
+    <indexes>
+      <index name="IDX_E3FEC116F9C28DE1" columns="IdUser"/>
+    </indexes>
+    <id name="id" type="integer" column="IdDeal">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="libelle" type="string" column="Libelle" length="254" nullable="true"/>
+    <field name="typedeal" type="string" column="TypeDeal" length="254" nullable="true"/>
+    <field name="categorie" type="string" column="Categorie" length="254" nullable="true"/>
+    <field name="prixinitial" type="float" column="PrixInitial" precision="10" scale="0" nullable="true"/>
+    <field name="prixpromotionnel" type="float" column="PrixPromotionnel" precision="10" scale="0" nullable="true"/>
+    <field name="datedebut" type="string" column="DateDebut" length="100" nullable="true"/>
+    <field name="datefin" type="string" column="DateFin" length="100" nullable="true"/>
+    <field name="image" type="string" column="Image" length="254" nullable="true"/>
+    <field name="quantite" type="integer" column="Quantite" nullable="true"/>
+    <field name="descriptif" type="string" column="Descriptif" length="254" nullable="true"/>
+    <field name="statut" type="integer" column="Statut" nullable="true"/>
+    <many-to-one field="iduser" target-entity="User">
+      <join-columns>
+        <join-column name="IdUser" referenced-column-name="IdUser"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

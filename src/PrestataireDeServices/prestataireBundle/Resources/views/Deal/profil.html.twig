@@ -1,0 +1,10 @@
+{%extends "PrestataireDeServicesprestataireBundle::layout.html.twig"%}
+{% block container %}
+    <div style="background-color: #ffffff" class="collapse navbar-collapse navbar-ex1-collapse">
+    <p>{{app.user.id}}</p>
+    <p>{{app.user.username}}</p>
+    <p>{{app.user.email}}</p>
+    </div>
+    
+    
+    {% endblock %}

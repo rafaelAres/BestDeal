@@ -1,0 +1,7 @@
+parameters:
+#    prestataire_de_servicesprestataire.example.class: PrestataireDeServices\prestataireBundle\Example
+
+services:
+#    prestataire_de_servicesprestataire.example:
+#        class: %prestataire_de_servicesprestataire.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

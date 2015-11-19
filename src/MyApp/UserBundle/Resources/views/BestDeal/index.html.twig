@@ -1,0 +1,154 @@
+{%extends "UserBundle::layout.html.twig"%}
+{% block container %}
+<div class="container">
+
+    <div class="row">
+        <div class="box diapo">
+            <div class="col-lg-12 text-center">
+                <div id="carousel-example-generic" class="carousel slide">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators hidden-xs">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="img-responsive img-full" src="{{asset('img/slide-1.jpg')}}" alt="">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive img-full" src="{{asset('img/slide-2.jpg')}}" alt="">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive img-full" src="{{asset('img/slide-3.jpg')}}" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
+                </div>
+                <div class="deal1"> <h3>
+                        <small>Welcome to</small>
+                    </h3></div>
+                <div class="deal"> <h1>
+                        <span class="brand-name">Best Deal</span>
+                    </h1></div>
+
+            </div>
+        </div>
+
+        <div class="box">
+                {% for deal in deals %}
+
+                <div class="col-sm-4 text-center">
+                    <div class="test">
+                        <div id="{{deal.IdDeal}}">
+                            <div class="libelle">  <span class="shorttitle">{{deal.Libelle}}</span></div>
+                            <img src='{{deal.Image}}' width="100%" height="180px">
+                            <br><span class="discount_text">A partir de</span> <span class="item_price">{{deal.PrixPromotionnel}} dt</span> <span class="original_price"> {{deal.PrixInitial}} dt</span><br>
+
+                            <div class="dealex"><span class="dealexp">  Ce deal est valable jusqu'au<br> </span> <span class="dealdateexp">{{deal.DateFin}}</span></div>
+                            
+                            <div class="dealr"><span class="remise"> - {{ (100/(deal.PrixInitial/deal.PrixPromotionnel))|round(1, 'floor') }} %</span></div>
+                            
+                        </div>
+                    </div>   
+
+                    <div id="{{deal.IdDeal+200}}"  class="divkbira" style="display:none;">                             
+                        <h4 class="dealtitr">{{deal.Libelle}}</h4>
+                        <div class="imgdet"><img src='{{deal.Image}}' width="600px" height="300px"></div>
+                        <div class="dealdet"><span class="discount_text">A partir de</span> <span class="item_price">{{deal.PrixPromotionnel}} dt</span> <span class="original_price"> {{deal.PrixInitial}} dt</span><br>
+                        La date du d�p�t du deal est le {{deal.DateDebut}} <br>
+                        Profitez VITE, ce deal est valable jusqu'au <span class="dealdateexp">{{deal.DateFin}}</span><br>
+                        <b>Type :</b> {{deal.TypeDeal}}<br>
+                        <b> Cat�gorie:</b> {{deal.Categorie}}<br>
+                        Vous �conomisez {{(deal.PrixInitial-deal.PrixPromotionnel)}} dt<br>
+                        <span class="remise"> - {{ (100/(deal.PrixInitial/deal.PrixPromotionnel))|round(1, 'floor') }} %</span><br>
+                        </div>
+                            <div class="detdeal"><b> D�tail de l'offre:</b><br>{{deal.Descriptif}}
+                    
+                                </br> <div class="dealre"><a href="{{path('deal_areserver',{'iddeal':deal.IdDeal,'iduser':app.user.id})}}"><img src="{{asset('img/reservez.jpg')}}"></a></div> 
+                          
+                        <div class="evaluation">
+                            <form action="{{path('deal_evaluer',{'iddeal':deal.IdDeal,'iduser':app.user.getid()})}}" method="POST" >
+                                 
+                                <fieldset class="rating">
+                                    <legend>Notez le deal:</legend>
+                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                                </fieldset>
+
+                                <br>
+                                <textarea name="commentaire" rows="4" cols="50">
+                                    Commentez le deal
+                                </textarea><br>
+                                <center><input id="eval" type="submit" class="col-sm-2" value="Evaluer"></center>
+                                <div id="zone"></div>
+                            </form>
+                        </div>
+                              </div>
+                {#          <div id="commentaires">
+                               <a id="commclick">Afficher les commentaires</a>
+                               <div id="commaffiche">
+                                   <ul>
+                                     {% for evaluation in evaluations %}
+                                           {% if (evaluation.iddeal==deal.iddeal) %}
+                                           <li> {{evaluation.commentaire}} </li>
+                                           {#{% endif %}
+                                       {% endfor %}    
+                                   </ul>
+                               </div>
+                           
+                           </div> #}
+                    </div>
+
+                </div>
+
+
+
+                <script>
+                    // Lors du clique sur le boutton le div #d1 sera AFFICHER
+
+
+                    $('#{{deal.IdDeal}}').click(function() {
+
+                        $('.test').addClass("transparence");
+                        $('#{{deal.IdDeal+200}}').fadeIn("slow");
+                    });
+                    $('#{{deal.IdDeal+200}}').dblclick(function() {
+
+                        $('#{{deal.IdDeal+200}}').hide();
+                        $('.test').removeClass("transparence");
+                    });
+
+
+                    $('#eval').click(function() {
+
+                        $('.evaluation').hide("slow");
+                    });
+
+
+
+
+
+
+                    </script>         
+                        {% endfor %}
+
+                </div>
+            </div>
+
+
+
+        </div>
+{% endblock %}

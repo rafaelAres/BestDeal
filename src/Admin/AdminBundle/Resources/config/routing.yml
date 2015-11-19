@@ -1,0 +1,80 @@
+admin_admin_homepage:
+    pattern:  /Admin/index
+    defaults: { _controller: AdminAdminBundle:Default:index }
+    
+admin_admin_stat:
+    pattern:  /Admin/stat
+    defaults: { _controller: AdminAdminBundle:Default:stat }
+    
+
+
+admin_admin_notif:
+    pattern:  /Admin/index
+    defaults: { _controller: AdminAdminBundle:Default:index }
+
+
+admin_admin_client:
+    pattern:  /Admin/client
+    defaults: { _controller: AdminAdminBundle:Default:client }
+    
+admin_admin_prest:
+    pattern:  /Admin/prestataire
+    defaults: { _controller: AdminAdminBundle:Default:prestataire }
+    
+admin_admin_prest_a_Valider:
+    pattern:  /Admin/prest_a_Valider
+    defaults: { _controller: AdminAdminBundle:Default:prest_a_Valider }
+
+admin_admin_ValiderP:
+    pattern:  /Admin/ValiderP/{id}
+    defaults: { _controller: AdminAdminBundle:Default:ValiderP }
+    
+
+admin_admin_deal:
+    pattern:  /Admin/deal
+    defaults: { _controller: AdminAdminBundle:Default:deal }
+    
+admin_admin_deal_a_Valider:
+    pattern:  /Admin/deal_a_Valider
+    defaults: { _controller: AdminAdminBundle:Default:deal_a_Valider }
+
+admin_admin_ValiderD:
+    pattern:  /Admin/ValiderD/{id}
+    defaults: { _controller: AdminAdminBundle:Default:ValiderD }
+    
+
+client_supprimer:
+    pattern:  /Admin/supprimerC/{id}
+    defaults: { _controller: AdminAdminBundle:Default:supprimerC }
+    
+prest_supprimer:
+    pattern:  /Admin/supprimerP/{id}
+    defaults: { _controller: AdminAdminBundle:Default:supprimerP }
+    
+deal_supprimer:
+    pattern:  /Admin/supprimerD/{id}
+    defaults: { _controller: AdminAdminBundle:Default:supprimerD }    
+
+user_rechercher:
+    pattern:  /Admin/rechercher
+    defaults: { _controller: AdminAdminBundle:Default:rechercher } 
+    
+user_rechercherP:
+    pattern:  /Admin/rechercherP
+    defaults: { _controller: AdminAdminBundle:Default:rechercherP }  
+    
+    
+deal_rechercher:
+    pattern:  /Admin/rechercherD
+    defaults: { _controller: AdminAdminBundle:Default:rechercherD }  
+    
+user_rechercher_prenom:
+    pattern:  /Admin/rechercher_prenom
+    defaults: { _controller: AdminAdminBundle:Default:rechercher_prenom }
+    
+deal_rechercher_cat:
+    pattern:  /Admin/rechercherD_cat
+    defaults: { _controller: AdminAdminBundle:Default:rechercherD_cat }
+
+    
+    

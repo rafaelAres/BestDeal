@@ -1,0 +1,3 @@
+notification:
+    pattern:  /notification
+    defaults: { _controller: UserBundle:Notifications:list }

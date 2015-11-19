@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PrestataireDeServices\prestataireBundle\Entity\Notification" table="notification">
+    <indexes>
+      <index name="IDX_BF5476CA97AF9ABE" columns="IdDeal"/>
+      <index name="IDX_BF5476CA804A36C4" columns="IdFromUser"/>
+      <index name="IDX_BF5476CAAC91624F" columns="IdToUser"/>
+    </indexes>
+    <id name="idnotification" type="integer" column="IdNotification">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="datenotification" type="string" column="DateNotification" length="100" nullable="true"/>
+    <field name="typenotification" type="string" column="TypeNotification" length="254" nullable="true"/>
+    <field name="message" type="string" column="Message" length="254" nullable="true"/>
+    <many-to-one field="iddeal" target-entity="Deal">
+      <join-columns>
+        <join-column name="IdDeal" referenced-column-name="IdDeal"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idfromuser" target-entity="User">
+      <join-columns>
+        <join-column name="IdFromUser" referenced-column-name="IdUser"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idtouser" target-entity="User">
+      <join-columns>
+        <join-column name="IdToUser" referenced-column-name="IdUser"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

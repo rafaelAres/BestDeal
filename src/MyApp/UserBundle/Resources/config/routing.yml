@@ -1,0 +1,69 @@
+user_homepage:
+    pattern:  /home
+    defaults: { _controller: UserBundle:Default:index }
+    
+user_test:
+    pattern:  /te
+    defaults: { _controller: UserBundle:Default:test }
+    
+user_contact:
+    pattern:  /contact
+    defaults: { _controller: UserBundle:Default:contact }    
+    
+user_recherche:
+    pattern:  /recherche
+    defaults: { _controller: UserBundle:Default:recherche }
+    
+user_about:
+    pattern:  /about
+    defaults: { _controller: UserBundle:Default:about } 
+    
+user_connexion:
+    pattern:  /connexion
+    defaults: { _controller: UserBundle:Default:connexion }     
+
+blog_accueil:
+    pattern: /{page}
+    defaults: {_controller: UserBundle:Blog:index, page: 1 }
+    requirements:
+        page:  \d*
+
+blog_voir:
+    pattern: /article/{id}
+    defaults: { _controller: UserBundle:Blog:voir}
+    requirements:
+        id: \d+
+        
+blog_ajouter:
+    path:      /ajouter
+    defaults:  { _controller: UserBundle:Blog:ajouter }
+blog_modifier:
+    path:      /modifier/{id}
+    defaults:  { _controller: UserBundle:Blog:modifier }
+    requirements:
+        id:  \d+
+blog_supprimer:
+    path:      /supprimer/{id}
+    defaults:  { _controller: UserBundle:Blog:supprimer }
+    requirements:
+        id:  \d+
+        
+        
+deal_areserver:
+    pattern:  /dareserver/{iddeal}
+    defaults: { _controller: UserBundle:Default:dareserver }
+    
+    
+deal_reserver:
+    pattern:  /reserver/{iddeal}
+    defaults: { _controller: UserBundle:Default:reserver }
+    
+    
+deal_evaluer:
+    pattern:  /evaluer/{iddeal}
+    defaults: { _controller: UserBundle:Default:evaluer }
+    
+    
+user_internaute:
+    pattern:  /internaute
+    defaults: { _controller: UserBundle:Default:internaute }

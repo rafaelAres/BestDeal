@@ -1,0 +1,33 @@
+prestataire_de_servicesprestataire_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:Default:index }
+PrestataireDeServicesprestataireBundle_deal:
+        resource: "@PrestataireDeServicesprestataireBundle/Resources/config/routing/deal.yml"
+        prefix:   /deal
+prestataire_de_servicesprestataire_affichage:
+    pattern:  /affichage
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:PS:affichage }
+prestataire_de_servicesprestataire_test:
+    pattern:  /test
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:PS:PSaffiche }
+
+#prestataire_de_servicesprestataire_liter:
+#    pattern:  /lister
+#    defaults: { _controller: PrestataireDeServicesprestataireBundle:PS:test }
+deal_create:
+    pattern:  /ajoutdeal
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:Deal:ajout } 
+deal_mesDeal:
+    pattern:  /mesDeal/{iduser}
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:Deal:mesDeal }    
+rel:
+    pattern:  /rel
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:Default:rel} 
+rel2:
+    pattern:  /rel2
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:Default:rel2} 
+profil:
+    pattern:  /profil
+    defaults: { _controller: PrestataireDeServicesprestataireBundle:Default:Profil} 
+
+    

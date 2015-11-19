@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    
+    <link href="{{asset('css/inscri.css')}}" rel="stylesheet"/>
+    
+    
+    <h1>Deal edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+     <li>{{ form(delete_form) }}</li>
+            <li>
+        <a href="{{ path('deal') }}">
+            Back to the list
+        </a>
+    </li>
+   
+</ul>
+{% endblock %}
